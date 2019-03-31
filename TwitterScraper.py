@@ -4,6 +4,14 @@ from selenium.webdriver.common.keys import Keys
 import selenium as se
 import sys
 
+'''
+    Reference:
+    Scrapping Infinitely scrolling websites Using Pthon Selenium. August 22, 2015
+    By Raghavendra
+    Link:
+    http://raghavendra990.github.io/2015/08/22/scrapping-using-selenium.html
+'''
+
 order_dict = {"K": 1000.0, "M": 1e6, "B": 1e9}
 
 def interpret_str(s):
