@@ -5,9 +5,6 @@ from requests.adapters import HTTPAdapter
 from urllib3.util import Retry
 import db_cleaner
 
-
-
-
 class YoutubeScraper():
 
     def __init__(self, movieNames):
