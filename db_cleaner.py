@@ -217,12 +217,19 @@ class Parser():
         self.conn.close()
 
 
+    def get_list_of_movies(self):
+        q = '''select original_title from movies'''
+        out = self.c.execute(q)
+        return out
+
+
 
 
 
 if __name__ == "__main__":
     parser = Parser()
-    parser.create_tables()
-    parser.get_clean_table()
-    parser.clean_credits()
-    parser.close_connection()
+    #parser.create_tables()
+    #parser.get_clean_table()
+    #parser.clean_credits()
+    #parser.close_connection()
+    parser.get_list_of_movies()
