@@ -22,25 +22,30 @@ def interpret_str(s):
         value = float(s[:-1])
         return int(value * order_dict[order])
 
-def query_movie(query):
+def query_by_hashtag(hashtag, nscroll = 3, ntrunc = 1000):
+    '''
+    hashtag: (type = string) concatenated movie title without punctuations or 
+             space for query
+    nscroll: (type = int) the number of times browser will automatically 
+             scroll down for new feeds
+    ntrunc:  (type = int) the maximum number of tweets that will be 
+             analyzed in this query
+    '''
     browser = webdriver.Firefox()
-    url = 'https://twitter.com/search?l=&q=%23' + query + '&src=typd'
+    url = 'https://twitter.com/search?l=&q=%23' + hashtag + '&src=typd'
     browser.get(url)
-    # scroll down for 100 times and sleep for 3 seconds between scrolls to 
+    # scroll down for nscroll times and sleep for 3 seconds between scrolls to 
     # allow data loading
-    nscroll = 3
-
     for i in range(nscroll):
         browser.execute_script("window.scrollTo(0, document.body.scrollHeight);")
         time.sleep(3)
 
     count = browser.find_elements_by_class_name('stream-item-footer')
-    ntrunc = 1000
     if len(count) > ntrunc:
         count = count[:ntrunc]
     summ = []
 
-    table = {"Title": query, "Count": len(count), "Like": 0, "Retweet": 0}
+    table = {"Hashtag": hashtag, "Count": len(count), "Like": 0, "Retweet": 0}
     for item in count:
         text = item.text
         array = text.split()
@@ -68,11 +73,24 @@ def query_movie(query):
     browser.close()
     return table
 
+def query_by_title(title, nscroll = 3, ntrunc = 1000):
+    '''
+    title:   (type = string) the raw movie title for query
+    nscroll: (type = int) the number of times browser will automatically 
+             scroll down for new feeds
+    ntrunc:  (type = int) the maximum number of tweets that will be 
+             analyzed in this query
+    '''
+    hashtag = ''.join(s for s in title if s.isalnum())
+    table = query_by_hashtag(hashtag, nscroll, ntrunc)
+    return table
+
 def main():
-    query = 'kungfupanda'
-    table = query_movie(query)
+    title = 'Signed, Sealed, Delivered'
+    nscroll = 10
+    ntrunc = 1000
+    table = query_by_title(title, nscroll, ntrunc)
     print(table)
 
 if __name__ == "__main__":
     main()
-

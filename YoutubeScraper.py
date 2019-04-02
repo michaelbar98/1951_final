@@ -3,68 +3,67 @@ import requests
 from time import sleep
 from requests.adapters import HTTPAdapter
 from urllib3.util import Retry
-import sqlite3
-from sqlite3 import Error
-numScrape = 3
+import db_cleaner
 
-def getStatsFromTrailer(movieName):
+class YoutubeScraper():
 
-    movieName = movieName.replace(" ", "+")
-    base = "https://www.youtube.com/results?search_query="
-    qstring = base + movieName + "+trailer"
+    def __init__(self, movieNames):
+        self.numScrape = 5
+        movieDict = {}
+        for name in movieNames:
+            movieDict[name] = self.getStatsFromTrailer(name)
+        return movieDict
 
-    r = requests.get(qstring)
-    page = r.text
-    soup = bs(page,'html.parser')
+    def getStatsFromTrailer(self, movieName):
+        movieName = movieName.replace(" ", "+")
+        base = "https://www.youtube.com/results?search_query="
+        qstring = base + movieName + "+trailer"
 
-    vids = soup.findAll(attrs={'class':'yt-uix-tile-link'})
-    count = 0
+        r = requests.get(qstring)
+        page = r.text
+        soup = bs(page, 'html.parser')
 
-    hrefs = []
-    statistics = []
+        vids = soup.findAll(attrs={'class': 'yt-uix-tile-link'})
+        count = 0
 
-    for v in vids:
-        if count < numScrape:
-            if v['href'].startswith("/"):
-                hrefs.append(v['href'])
-                count = count + 1
-        else:
-            break
+        hrefs = []
+        statistics = []
 
-    base2 = "http://www.youtube.com"
+        for v in vids:
+            if count < self.numScrape:
+                if v['href'].startswith("/"):
+                    hrefs.append(v['href'])
+                    count = count + 1
+            else:
+                break
 
-    for link in hrefs:
+        base2 = "http://www.youtube.com"
 
-        r2 = requests.get(base2+link)
-        page1 = r2.text
-        soup1 = bs(page1,'html.parser')
+        for link in hrefs:
 
-        viewCount = soup1.find("div", attrs={'class':'watch-view-count'})
-        likesCount = soup1.find("button", attrs={'class':'like-button-renderer-like-button'})
-        dislikesCount = soup1.find("button", attrs={'class':'like-button-renderer-dislike-button'})
-        ratio = float(likesCount.text.replace(",",""))/float(dislikesCount.text.replace(",",""))
+            r2 = requests.get(base2 + link)
+            page1 = r2.text
+            soup1 = bs(page1, 'html.parser')
 
-        if viewCount is not None:
-            result = {"views": viewCount.text, "likes": likesCount.text, "dislikes": dislikesCount.text, "LDratio": ratio}
-        else:
-            result = {"views": None, "likes": likesCount.text, "dislikes": dislikesCount.text, "LDratio": ratio}
-        statistics.append(result)
+            viewCount = soup1.find("div", attrs={'class': 'watch-view-count'})
+            likesCount = soup1.find("button", attrs={'class': 'like-button-renderer-like-button'})
+            dislikesCount = soup1.find("button", attrs={'class': 'like-button-renderer-dislike-button'})
+            ratio = float(likesCount.text.replace(",", "")) / float(dislikesCount.text.replace(",", ""))
 
-    return statistics
+            if viewCount is not None:
+                result = {"views": viewCount.text, "likes": likesCount.text, "dislikes": dislikesCount.text,
+                          "LDratio": ratio}
+            else:
+                result = {"views": None, "likes": likesCount.text, "dislikes": dislikesCount.text, "LDratio": ratio}
+            statistics.append(result)
 
+        return statistics
 
+if __name__ == "__main__":
+    db = db_cleaner()
 
-def main():
+    movies = db.get_list_of_movies()
+    ys = YoutubeScraper(movies)
 
-    movie = "Inception"
-    result = getStatsFromTrailer(movie)
-
-    print("Results from top " + str(numScrape) + " trailers for " + movie + ": ")
-    for r in result:
-        print(r)
-
-if __name__ == '__main__':
-    main()
-
-
-
+    for key, value in ys.items():
+        print(key, value)
