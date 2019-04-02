@@ -3,8 +3,9 @@ import requests
 from time import sleep
 from requests.adapters import HTTPAdapter
 from urllib3.util import Retry
-
-numScrape = 5
+import sqlite3
+from sqlite3 import Error
+numScrape = 3
 
 def getStatsFromTrailer(movieName):
 
@@ -50,6 +51,7 @@ def getStatsFromTrailer(movieName):
         statistics.append(result)
 
     return statistics
+
 
 
 def main():
