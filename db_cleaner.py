@@ -1,6 +1,7 @@
 import sqlite3
 from sqlite3 import Error
 import json
+
 class Parser():
 
     def __init__(self, sqlfile = "data/movies_clean.db"):
@@ -220,6 +221,7 @@ class Parser():
     def get_list_of_movies(self):
         q = '''select original_title from movies'''
         out = self.c.execute(q)
+        out = [x[0] for x in out]
         return out
 
 
