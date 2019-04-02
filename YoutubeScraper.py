@@ -1,8 +1,10 @@
 from bs4 import BeautifulSoup as bs
 import requests
+from time import sleep
+from requests.adapters import HTTPAdapter
+from urllib3.util import Retry
 
-
-numScrape = 3
+numScrape = 5
 
 def getStatsFromTrailer(movieName):
 
@@ -22,16 +24,16 @@ def getStatsFromTrailer(movieName):
 
     for v in vids:
         if count < numScrape:
-
-            hrefs.append(v['href'])
-            count = count + 1
+            if v['href'].startswith("/"):
+                hrefs.append(v['href'])
+                count = count + 1
         else:
             break
 
-
-    base2 = "https://www.youtube.com"
+    base2 = "http://www.youtube.com"
 
     for link in hrefs:
+
         r2 = requests.get(base2+link)
         page1 = r2.text
         soup1 = bs(page1,'html.parser')
@@ -51,7 +53,11 @@ def getStatsFromTrailer(movieName):
 
 
 def main():
-    result = getStatsFromTrailer("Spider Man 2")
+
+    movie = "Inception"
+    result = getStatsFromTrailer(movie)
+
+    print("Results from top " + str(numScrape) + " trailers for " + movie + ": ")
     for r in result:
         print(r)
 
