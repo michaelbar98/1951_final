@@ -7,8 +7,10 @@ import db_cleaner
 
 class YoutubeScraper():
 
-    def __init__(self, movieNames):
-        self.numScrape = 5
+    def __init__(self):
+        self.numScrape = 3
+
+    def getStatsOnAllMovies(self, movieNames):
         movieDict = {}
         for name in movieNames:
             movieDict[name] = self.getStatsFromTrailer(name)
@@ -48,22 +50,44 @@ class YoutubeScraper():
             viewCount = soup1.find("div", attrs={'class': 'watch-view-count'})
             likesCount = soup1.find("button", attrs={'class': 'like-button-renderer-like-button'})
             dislikesCount = soup1.find("button", attrs={'class': 'like-button-renderer-dislike-button'})
-            ratio = float(likesCount.text.replace(",", "")) / float(dislikesCount.text.replace(",", ""))
+            # ratio = -1.0
+            # if likesCount.text != "" and dislikesCount.text != "":
+            #     ratio = float(likesCount.text.replace(",", "")) / float(dislikesCount.text.replace(",", ""))
 
             if viewCount is not None:
-                result = {"views": viewCount.text, "likes": likesCount.text, "dislikes": dislikesCount.text,
-                          "LDratio": ratio}
+                # result = {"views": viewCount.text, "likes": likesCount.text, "dislikes": dislikesCount.text,
+                #           "LDratio": ratio}
+
+                if likesCount != None and dislikesCount != None:
+                    result = {"views": viewCount.text, "likes": likesCount.text, "dislikes": dislikesCount.text}
+                else:
+                    result = {"views": viewCount.text, "likes": None, "dislikes": None}
             else:
-                result = {"views": None, "likes": likesCount.text, "dislikes": dislikesCount.text, "LDratio": ratio}
+                #result = {"views": None, "likes": likesCount.text, "dislikes": dislikesCount.text, "LDratio": ratio}
+                if likesCount != None and dislikesCount != None:
+                    result = {"views": None, "likes": likesCount.text, "dislikes": dislikesCount.text}
+                else:
+                    result = {"views": None, "likes": None, "dislikes": None}
+
             statistics.append(result)
 
         return statistics
 
 if __name__ == "__main__":
-    db = db_cleaner()
+    db = db_cleaner.Parser()
 
     movies = db.get_list_of_movies()
-    ys = YoutubeScraper(movies)
+    ys = YoutubeScraper()
 
-    for key, value in ys.items():
+    result = ys.getStatsOnAllMovies(movies)
+
+    start = 0
+    final = len(movies)
+
+    quarter = final/4
+
+    for key, value in result():
         print(key, value)
+
+
+
