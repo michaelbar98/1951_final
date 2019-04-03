@@ -3,7 +3,7 @@ import requests
 from time import sleep
 from requests.adapters import HTTPAdapter
 from urllib3.util import Retry
-import db_cleaner
+from db_cleaner import Parser
 
 class YoutubeScraper():
 
@@ -60,10 +60,14 @@ class YoutubeScraper():
         return statistics
 
 if __name__ == "__main__":
-    db = db_cleaner()
-
+    db = Parser()
     movies = db.get_list_of_movies()
     ys = YoutubeScraper(movies)
-
+    end = len(movies)
+    print ("total of ", end, " movies")
+    start = 0;
     for key, value in ys.items():
+
         print(key, value)
+        start += 1
+
