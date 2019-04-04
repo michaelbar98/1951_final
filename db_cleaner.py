@@ -228,6 +228,8 @@ class Parser():
         return out
 
 
+
+
     def add_normalised_money(self):
         mc = MoneyConverter()
         to_be_exec =[]
@@ -247,6 +249,9 @@ class Parser():
 
 
 
+
+
+
 class MoneyConverter():
 
     def __init__(self):
@@ -258,6 +263,8 @@ class MoneyConverter():
             old_year += 1
             money *= self.rates[old_year]
         return int(round(money))
+
+
 
 
 
