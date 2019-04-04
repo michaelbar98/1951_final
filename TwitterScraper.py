@@ -3,6 +3,7 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 import selenium as se
 import sys
+import sqlite3
 
 '''
     Reference:
@@ -22,7 +23,7 @@ def interpret_str(s):
         value = float(s[:-1])
         return int(value * order_dict[order])
 
-def query_by_hashtag(hashtag, nscroll = 3, ntrunc = 1000):
+def query_by_title(title, nscroll = 3, ntrunc = 1000):
     '''
     hashtag: (type = string) concatenated movie title without punctuations or 
              space for query
@@ -31,6 +32,7 @@ def query_by_hashtag(hashtag, nscroll = 3, ntrunc = 1000):
     ntrunc:  (type = int) the maximum number of tweets that will be 
              analyzed in this query
     '''
+    hashtag = ''.join(s for s in title if s.isalnum())
     browser = webdriver.Firefox()
     url = 'https://twitter.com/search?l=&q=%23' + hashtag + '&src=typd'
     browser.get(url)
@@ -45,7 +47,7 @@ def query_by_hashtag(hashtag, nscroll = 3, ntrunc = 1000):
         count = count[:ntrunc]
     summ = []
 
-    table = {"Hashtag": hashtag, "Count": len(count), "Like": 0, "Retweet": 0}
+    table = {"Title": title, "Count": len(count), "Like": 0, "Retweet": 0}
     for item in count:
         text = item.text
         array = text.split()
@@ -73,24 +75,41 @@ def query_by_hashtag(hashtag, nscroll = 3, ntrunc = 1000):
     browser.close()
     return table
 
-def query_by_title(title, nscroll = 3, ntrunc = 1000):
-    '''
-    title:   (type = string) the raw movie title for query
-    nscroll: (type = int) the number of times browser will automatically 
-             scroll down for new feeds
-    ntrunc:  (type = int) the maximum number of tweets that will be 
-             analyzed in this query
-    '''
-    hashtag = ''.join(s for s in title if s.isalnum())
-    table = query_by_hashtag(hashtag, nscroll, ntrunc)
-    return table
-
 def main():
-    title = 'Signed, Sealed, Delivered'
+    conn = sqlite3.connect('data/movies_clean.db')
+    c = conn.cursor()
+    c.execute('SELECT original_title FROM movies;')
+    titles = c.fetchall()
     nscroll = 10
-    ntrunc = 1000
-    table = query_by_title(title, nscroll, ntrunc)
-    print(table)
+    ntrunc = 2000
+    tables = []
+    for title in titles:
+        print("Searching ", title[0])
+        table = query_by_title(title[0], nscroll, ntrunc)
+        tables.append(table)
+    # Create a table named movies_twitter in movies_twitter.db to 
+    # store the twitter related data
+    conn = sqlite3.connect('movies_twitter.db')
+    c = conn.cursor()
+    # Delete tables if they exist
+    c.execute('DROP TABLE IF EXISTS "movies_twitter";')
+    # Create tables in the database and add data to it. REMEMBER TO COMMIT
+    c.execute('CREATE TABLE movies_twitter(title str not null,\
+            like float,\
+            retweet float)')
+    conn.commit()
+    for table in tables:
+        title, like = table['Title'], table['Like']
+        retweet, count = table['Retweet'], table['Count']
+        if count == 0:
+            c.execute('INSERT INTO movies_twitter VALUEs (?, ?, ?)', (title,\
+                0.0,\
+                0.0))
+        else:
+            c.execute('INSERT INTO movies_twitter VALUEs (?, ?, ?)', (title,\
+                like/count,\
+                retweet/count))
+    conn.commit()
 
 if __name__ == "__main__":
     main()
