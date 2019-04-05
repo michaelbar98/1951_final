@@ -227,6 +227,52 @@ class Parser():
 
         return out
 
+    def clean_youtube_csv(self, path = "youtube_scrapper.csv"):
+        self.drop_table("youtube_clean")
+        self.c.execute('''CREATE TABLE "youtube_clean" ( "name" TEXT, "views" INTEGER, "likes" INTEGER, "dislikes" INTEGER )''')
+        def get_right_trailer(list):
+
+            i = 0
+            max_views = -2
+            to_return = None
+            while i < 9:
+                if(list[i] == "" or list[i+1] == "" or list[i+1] == "-1"):
+                    i += 3
+                    continue
+                views = int(list[i])
+                likes = list[i+1]
+                dislikes = list[i+2]
+                i += 3
+                if views > max_views:
+                    to_return = [views, likes, dislikes]
+                    max_views = views
+            if to_return is None:
+                return [list[0], -10,-10]
+            return to_return
+
+
+
+        with open(path, encoding="utf8") as csvDataFile:
+            csvReader = csv.reader(csvDataFile)
+            first = True
+            to_be_inserted = []
+            for row in csvReader:
+                if first:
+                    first = False
+                    continue
+                name_index = len(row) - 9
+                name = ",".join(row[0:name_index])
+                info = row[-9:]
+                if (len(info) == 4):
+                    trailer = info[1:]
+                else:
+                    trailer = get_right_trailer(info)
+                to_be_inserted.append([name]+trailer)
+
+            self.c.executemany('''insert into youtube_clean(name, views, likes, dislikes) values (?,?,?,?)''', to_be_inserted)
+            self.conn.commit()
+            self.close_connection()
+
 
 
 
@@ -277,4 +323,5 @@ if __name__ == "__main__":
     #parser.clean_credits()
     #parser.close_connection()
     #parser.get_list_of_movies()
-    parser.add_normalised_money()
+    #parser.add_normalised_money()
+    parser.clean_youtube_csv()
