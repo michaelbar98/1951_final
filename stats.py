@@ -2,6 +2,7 @@ import sqlite3
 from sqlite3 import Error
 import json
 import csv
+import numpy as np
 
 
 class Stats():
@@ -10,7 +11,8 @@ class Stats():
         conn = self.create_connection(sqlfile)
         self.conn = conn
         self.c = conn.cursor()
-        self.actor_score()
+        #self.actor_score()
+        self.score_movies()
 
     def close_connection(self):
         self.c.close()
@@ -56,7 +58,26 @@ class Stats():
         self.conn.commit()
 
 
+    def score_movies(self):
+        movies = self.c.execute('''select distinct id from movies WHERE revenue>0''')
 
+        movIds = list(movies)
+
+        for id in movIds:
+
+            sql = "select DISTINCT actorID, actor_score FROM movie_actor WHERE movieId=?"
+            output = self.c.execute(sql, id)
+
+            listOutput = list(output)
+            print(listOutput)
+
+            newList = [x[1] for x in listOutput if not (x[1] == 0.0)]
+            npArray = np.array(newList)
+
+            avg = np.mean(npArray)
+
+            self.c.execute('''UPDATE movies SET cast_score = ? WHERE id = ?''', [avg, id[0]])
+        self.conn.commit()
 
 
 
