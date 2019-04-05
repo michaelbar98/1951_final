@@ -1,6 +1,8 @@
 import sqlite3
 from sqlite3 import Error
 import json
+import csv
+
 
 class Parser():
 
@@ -222,7 +224,47 @@ class Parser():
         q = '''select original_title from movies'''
         out = self.c.execute(q)
         out = [x[0] for x in out]
+
         return out
+
+
+
+
+    def add_normalised_money(self):
+        mc = MoneyConverter()
+        to_be_exec =[]
+        for row in self.c.execute("select id, budget,revenue, strftime('%Y',release_date) from movies"):
+            exec = [mc.convert(int(row[-1]), row[1]), mc.convert(int(row[-1]), row[2]),row[0]]
+            to_be_exec.append(exec)
+
+
+        sql = '''UPDATE movies SET budget_now = ?, revenue_now = ? WHERE id = ?;'''
+
+        for exec in to_be_exec:
+            self.c.execute(sql, exec)
+
+
+        self.conn.commit()
+        self.close_connection()
+
+
+
+
+
+
+class MoneyConverter():
+
+    def __init__(self):
+        self.rates = {2001: 1.028, 2002: 1.016,2003: 1.023, 2004: 1.027, 2005: 1.034, 2006:1.032, 2007:1.028, 2008:1.038, 2009:0.996, 2010:1.016,
+                2011:1.032, 2012: 1.021, 2013:1.015, 2014:1.016, 2015: 1.001, 2016: 1.013, 2017:1.021, 2018:1.024, 2019:1.007}
+
+    def convert(self, old_year, money, new_year = 2019):
+        while old_year != new_year:
+            old_year += 1
+            money *= self.rates[old_year]
+        return int(round(money))
+
+
 
 
 
@@ -234,4 +276,5 @@ if __name__ == "__main__":
     #parser.get_clean_table()
     #parser.clean_credits()
     #parser.close_connection()
-    parser.get_list_of_movies()
+    #parser.get_list_of_movies()
+    parser.add_normalised_money()
