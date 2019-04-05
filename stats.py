@@ -2,10 +2,8 @@ import sqlite3
 from sqlite3 import Error
 import json
 import csv
-<<<<<<< HEAD
-=======
 import numpy as np
->>>>>>> fccb33b7b4ebd448b029dc867f59f6cf3a8ade90
+
 
 
 class Stats():
@@ -14,12 +12,8 @@ class Stats():
         conn = self.create_connection(sqlfile)
         self.conn = conn
         self.c = conn.cursor()
-<<<<<<< HEAD
-        self.actor_score()
-=======
-        #self.actor_score()
         self.score_movies()
->>>>>>> fccb33b7b4ebd448b029dc867f59f6cf3a8ade90
+
 
     def close_connection(self):
         self.c.close()
@@ -65,9 +59,6 @@ class Stats():
         self.conn.commit()
 
 
-<<<<<<< HEAD
-
-=======
     def score_movies(self):
         movies = self.c.execute('''select distinct id from movies WHERE revenue>0''')
 
@@ -88,7 +79,6 @@ class Stats():
 
             self.c.execute('''UPDATE movies SET cast_score = ? WHERE id = ?''', [avg, id[0]])
         self.conn.commit()
->>>>>>> fccb33b7b4ebd448b029dc867f59f6cf3a8ade90
 
 
 
