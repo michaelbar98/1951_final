@@ -293,7 +293,15 @@ class Parser():
         self.conn.commit()
         self.close_connection()
 
+    def insert_twitter_table(self):
+        conn = self.create_connection("data/movies_twitter.db")
+        out = conn.execute('''select * from movies_twitter''')
 
+        #print(list(out))
+        sql = '''INSERT INTO movies_twitter VALUES (?,?,?,?)'''
+        self.c.executemany(sql, list(out))
+        self.conn.commit()
+        self.close_connection()
 
 
 
@@ -324,4 +332,5 @@ if __name__ == "__main__":
     #parser.close_connection()
     #parser.get_list_of_movies()
     #parser.add_normalised_money()
-    parser.clean_youtube_csv()
+    #parser.clean_youtube_csv()
+    parser.insert_twitter_table()
