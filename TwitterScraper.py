@@ -51,6 +51,8 @@ def query_by_title(title, nscroll = 3, ntrunc = 1000):
     for item in count:
         text = item.text
         array = text.split()
+        if len(array) == 0:
+            continue
         res = []
         if array[-1] == "Like":
             res += ["Like", 0]
@@ -75,18 +77,7 @@ def query_by_title(title, nscroll = 3, ntrunc = 1000):
     browser.close()
     return table
 
-def main():
-    conn = sqlite3.connect('data/movies_clean.db')
-    c = conn.cursor()
-    c.execute('SELECT original_title FROM movies;')
-    titles = c.fetchall()
-    nscroll = 10
-    ntrunc = 2000
-    tables = []
-    for title in titles:
-        print("Searching ", title[0])
-        table = query_by_title(title[0], nscroll, ntrunc)
-        tables.append(table)
+def save_db(tables):
     # Create a table named movies_twitter in movies_twitter.db to 
     # store the twitter related data
     conn = sqlite3.connect('movies_twitter.db')
@@ -95,21 +86,48 @@ def main():
     c.execute('DROP TABLE IF EXISTS "movies_twitter";')
     # Create tables in the database and add data to it. REMEMBER TO COMMIT
     c.execute('CREATE TABLE movies_twitter(title str not null,\
-            like float,\
-            retweet float)')
+            count int,\
+            like int,\
+            retweet int)')
     conn.commit()
     for table in tables:
         title, like = table['Title'], table['Like']
         retweet, count = table['Retweet'], table['Count']
-        if count == 0:
-            c.execute('INSERT INTO movies_twitter VALUEs (?, ?, ?)', (title,\
-                0.0,\
-                0.0))
-        else:
-            c.execute('INSERT INTO movies_twitter VALUEs (?, ?, ?)', (title,\
-                like/count,\
-                retweet/count))
+        c.execute('INSERT INTO movies_twitter VALUEs (?, ?, ?, ?)', (title,\
+                count,\
+                like,\
+                retweet))
     conn.commit()
+
+def main():
+    conn = sqlite3.connect('data/movies_clean.db')
+    c = conn.cursor()
+    c.execute('SELECT original_title FROM movies;')
+    titles = c.fetchall()
+    nscroll = 5
+    ntrunc = 2000
+    tables = []
+
+    count, dump = 0, 100
+    ntitles = len(titles)
+    ndump = int(ntitles / dump)
+    for count in range(ndump+1):
+        print('Saving dump file', count)
+        with open('movies_twitter'+str(count)+'.txt', 'w') as out:
+            out.write('Title,Count,Like,Retweet\n')
+            start = count*dump
+            end = min(ntitles, (count+1)*dump)
+            for title in titles[start:end]:
+                print("Searching ", title[0])
+                try:
+                    table = query_by_title(title[0], nscroll, ntrunc)
+                    tables.append(table)
+                    out.write(','.join([str(table[x]) for x in table]))
+                    out.write('\n')
+                except:
+                    continue
+    save_db(tables)
+    print('Database saved.')
 
 if __name__ == "__main__":
     main()

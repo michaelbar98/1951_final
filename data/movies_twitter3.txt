@@ -1,0 +1,101 @@
+Title,Count,Like,Retweet
+Sex and the City 2,97,1462,126
+The Road to El Dorado,101,5330,1751
+Ice Age: Continental Drift,92,262,232
+Cinderella,110,2207,352
+The Lovely Bones,13,7,0
+Finding Nemo,100,417,46
+The Lord of the Rings: The Return of the King,76,318,75
+The Lord of the Rings: The Two Towers,79,167,50
+Seventh Son,108,1386,2032
+Lara Croft: Tomb Raider,77,949,212
+Transcendence,98,627,158
+Jurassic Park III,118,4474,1162
+Rise of the Planet of the Apes,97,1089,351
+The Spiderwick Chronicles,83,267,85
+A Good Day to Die Hard,112,270,74
+The Alamo,87,4825,808
+The Incredibles,80,273,30
+Percy Jackson & the Olympians: The Lightning Thief,26,5,4
+Unstoppable,120,17601,3246
+Rush Hour 2,99,830,188
+What Lies Beneath,118,5121,1104
+Cloudy with a Chance of Meatballs,107,1745,371
+Ice Age: Dawn of the Dinosaurs,92,235,197
+The Secret Life of Walter Mitty,101,550,155
+Charlie's Angels,118,36446,11321
+The Departed,102,6657,1775
+Tropic Thunder,111,4199,792
+The Girl with the Dragon Tattoo,93,2782,745
+Sherlock Holmes,114,1578,326
+Ben-Hur,120,352,51
+Atlantis: The Lost Empire,103,8285,2478
+Alvin and the Chipmunks: The Road Chip,98,762,826
+Valkyrie,114,45331,12922
+You Don't Mess with the Zohan,99,705,91
+Pixels,117,18838,3662
+A.I. Artificial Intelligence,60,188,83
+The Haunted Mansion,21,60,18
+Hollow Man,116,3259,706
+The Interpreter,102,3628,1360
+Percy Jackson: Sea of Monsters,111,242,156
+Lara Croft Tomb Raider: The Cradle of Life,45,32,13
+Now You See Me 2,116,5984,2811
+Spy Game,114,2345,555
+Mission to Mars,109,2470,1820
+Rio,97,1205,260
+K-19: The Widowmaker,66,108,32
+Cinderella Man,113,3560,571
+The Nutcracker: The Untold Story,5,0,0
+Seabiscuit,7,4,0
+Cast Away,102,2398,339
+Happy Feet,92,209,63
+The Bourne Supremacy,101,484,141
+Ocean's Eleven,88,4607,1515
+The Three Musketeers,17,235,14
+Hotel Transylvania,37,40,4
+Enchanted,110,2165,643
+Safe House,39,229,78
+102 Dalmatians,116,792,173
+Tower Heist,116,356,102
+The Holiday,109,4404,555
+It's Complicated,120,8914,1567
+Ocean's Thirteen,115,561,168
+Open Season,116,4412,1007
+Divergent,75,1013,222
+Enemy at the Gates,79,528,220
+The Rundown,93,2236,284
+Memoirs of a Geisha,111,2381,747
+The Fast and the Furious: Tokyo Drift,72,179,48
+Arthur Christmas,114,5146,1258
+Collateral Damage,58,66,24
+Mirror Mirror,67,13088,2023
+Scott Pilgrim vs. the World,41,126,9
+The Core,111,7693,1687
+Nutty Professor II: The Klumps,25,2,2
+Scooby-Doo,108,2019,441
+Dredd,54,278,60
+Click,82,412,149
+Cats & Dogs 2 : The Revenge of Kitty Galore,0,0,0
+Jumper,118,2244,717
+Hellboy II: The Golden Army,46,41,11
+Zodiac,82,460,198
+The 6th Day,60,145,45
+Bruce Almighty,114,10824,2256
+The Expendables,81,1174,253
+The Hunger Games,98,240,49
+The Hangover Part II,111,95,60
+Over the Hedge,116,810,186
+Lilo & Stitch,69,319,132
+Charlotte's Web,92,5441,1351
+RED 2,119,1741,702
+The Longest Yard,118,2782,557
+Alvin and the Chipmunks: Chipwrecked,39,104,34
+Grown Ups 2,116,1117,241
+Get Smart,120,6135,875
+Something's Gotta Give,105,38033,13309
+Shutter Island,39,55,12
+Four Christmases,113,2144,399
+Robots,91,3478,2112
+Bedtime Stories,109,364,134
+Road to Perdition,109,1936,694

@@ -1,0 +1,101 @@
+Title,Count,Like,Retweet
+RockNRolla,26,58,11
+Mao's Last Dancer,0,0,0
+Midnight Special,5,5,0
+Anything Else,6,7,0
+The Railway Man,0,0,0
+Das weisse Band,1,0,0
+Restoration,120,2489,497
+Salton Sea,83,201,70
+Metallica: Through the Never,0,0,0
+The Informers,1,0,0
+Carlos,65,336,38
+I Come with the Rain,0,0,0
+I Am Wrath,1,0,0
+Renaissance,99,902,230
+Red Lights,43,142,23
+Superbad,48,360,44
+Madea Goes to Jail,1,0,0
+Wolves,112,4998,857
+Step Up 2: The Streets,2,21,0
+Hoodwinked!,37,122,17
+Hotel Rwanda,8,3,1
+Hitman,111,1177,182
+Black Nativity,0,0,0
+The Prince,58,185,55
+City of Ghosts,5,3,1
+The Others,20,123,35
+Let's Be Cops,6,0,0
+Sideways,95,199,20
+Beerfest,117,276,114
+Good Boy!,99,3387,459
+The Best Man Holiday,3,0,1
+Smokin' Aces,10,15,5
+Saw 3D,1,0,0
+40 Days and 40 Nights,3,3,0
+Beastly,15,191,40
+The Hills Have Eyes,11,33,3
+Dickie Roberts: Former Child Star,1,0,0
+McFarland, USA,3,2,0
+Lottery Ticket,13,52,17
+ATL,68,3798,805
+Pitch Perfect,99,235,42
+Summer Catch,1,0,0
+They,92,319,128
+Larry the Cable Guy: Health Inspector,0,0,0
+Brooklyn's Finest,18,29,8
+Evil Dead,120,631,106
+My Life in Ruins,0,0,0
+American Dreamz,0,0,0
+How She Move,0,0,0
+Running Scared,58,52,7
+Bobby Jones: Stroke of Genius,0,0,0
+The Illusionist,10,10,0
+Veronica Guerin,1,1,0
+Escobar: Paradise Lost,0,0,0
+Southland Tales,9,13,3
+Chasseurs de dragons,0,0,0
+The Apparition,1,0,0
+Fur: An Imaginary Portrait of Diane Arbus,0,0,0
+Becoming Jane,4,11,2
+Sydney White,3,5,1
+House of Sand and Fog,1,0,0
+Road Trip,119,3907,652
+The Artist,55,200,43
+The Unborn,3,1,0
+Moonrise Kingdom,12,50,15
+The Texas Chainsaw Massacre: The Beginning,0,0,0
+The Young Messiah,0,0,0
+The Master of Disguise,0,0,0
+El laberinto del fauno,23,630,70
+See Spot Run,3,3,2
+Baby Boy,113,2445,260
+The Roommate,0,0,0
+Joe Dirt,48,442,25
+Hot Fuzz,111,505,96
+The Women,21,458,45
+Vicky Cristina Barcelona,9,5,0
+Arn: Tempelriddaren,0,0,0
+Boys and Girls,31,30,9
+White Oleander,1,0,0
+Jennifer's Body,12,56,40
+Drowning Mona,1,2,0
+Remember Me,79,265,49
+How to Deal,3,0,0
+The Cookout,39,230,49
+Duets,36,66,8
+Hollywood Ending,1,1,0
+Things We Lost in the Fire,3,0,0
+The Immigrant,5,37,5
+The White Countess,0,0,0
+Trance,102,1775,613
+Soul Plane,12,16,4
+Bienvenue chez les ch'tis,0,0,0
+Good,100,7910,1233
+Enter the Void,9,11,0
+Vamps,52,272,337
+Hachi: A Dog's Tale,0,0,0
+Zulu,77,693,159
+The Homesman,1,3,1
+Juwanna Mann,3,0,0
+Ararat,30,77,17

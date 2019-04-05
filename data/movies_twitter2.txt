@@ -1,0 +1,101 @@
+Title,Count,Like,Retweet
+Clash of the Titans,106,781,154
+The Bourne Legacy,89,548,115
+How the Grinch Stole Christmas,119,4715,1726
+The Day After Tomorrow,118,3457,1076
+Mission: Impossible II,95,59,21
+The Perfect Storm,100,4083,1411
+4: Rise of the Silver Surfer,11,30,9
+Life of Pi,69,1952,457
+Ghost Rider,119,7493,1610
+Jason Bourne,108,818,162
+Charlie's Angels: Full Throttle,108,159,51
+Prometheus,120,10514,2962
+Stuart Little 2,61,800,155
+Elysium,99,2653,472
+The Chronicles of Riddick,98,486,126
+RoboCop,118,2755,1099
+Speed Racer,112,11487,2590
+How Do You Know,119,1731,702
+Knight and Day,104,3230,862
+Oblivion,83,889,154
+Star Wars: Episode III - Revenge of the Sith,82,58,11
+Star Wars: Episode II - Attack of the Clones,48,51,4
+Monsters, Inc.,119,28968,8642
+The Wolverine,116,3245,1004
+The Croods,119,2069,1308
+Astérix aux Jeux Olympiques,55,690,149
+Windtalkers,99,1155,336
+The Huntsman: Winter's War,116,3988,4872
+Teenage Mutant Ninja Turtles,120,7245,1659
+Gravity,114,17963,6101
+Teenage Mutant Ninja Turtles: Out of the Shadows,85,323,171
+Fantastic Four,115,17173,2843
+Night at the Museum,77,8311,1373
+San Andreas,94,97,48
+The Patriot,54,391,107
+Ocean's Twelve,116,779,211
+Mr. & Mrs. Smith,100,176,59
+Insurgent,100,3757,1570
+The Aviator,81,1837,555
+Gulliver's Travels,120,1710,582
+The Green Hornet,108,1493,614
+300: Rise of an Empire,100,673,417
+The Smurfs,116,2986,1071
+Home on the Range,112,4907,977
+Allegiant,37,60,20
+Real Steel,120,1519,616
+The Smurfs 2,117,431,560
+Ender's Game,35,94,24
+Live Free or Die Hard,101,806,264
+The Lord of the Rings: The Fellowship of the Ring,63,65,31
+Around the World in 80 Days,109,1393,336
+Ali,81,1243,366
+The Cat in the Hat,23,94,25
+I, Robot,119,1940,488
+Kingdom of Heaven,93,706,313
+The Princess and the Frog,18,7,4
+The Martian,88,2688,522
+The Island,118,18021,10268
+Town & Country,103,157,88
+Gone in Sixty Seconds,101,2269,636
+Gladiator,105,3106,343
+Minority Report,120,2965,1193
+Harry Potter and the Chamber of Secrets,116,6510,1197
+Casino Royale,77,344,35
+Planet of the Apes,88,304,63
+Public Enemies,99,2896,885
+American Gangster,114,3139,1175
+The Taking of Pelham 1 2 3,115,330,75
+Little Fockers,114,611,182
+The Other Guys,93,2801,554
+Django Unchained,118,3613,1045
+The Emperor's New Groove,116,18626,8156
+The Expendables 2,113,466,226
+National Treasure,115,579,55
+Eragon,103,10032,1166
+Where the Wild Things Are,60,1274,182
+Epic,118,4485,939
+The Tourist,108,1555,436
+Blood Diamond,98,3752,739
+The Wolf of Wall Street,98,5278,2018
+Cloud Atlas,31,255,10
+Legend of the Guardians: The Owls of Ga'Hoole,31,7,4
+Catwoman,98,5299,1036
+Hercules,120,3744,828
+Treasure Planet,19,964,282
+Land of the Lost,116,7207,7997
+The Expendables 3,100,339,196
+Point Break,120,2659,442
+Son of the Mask,106,113,54
+In the Heart of the Sea,115,2889,1162
+The Adventures of Pluto Nash,60,31,15
+Green Zone,116,2623,610
+The Peanuts Movie,119,1969,1577
+The Mummy Returns,117,2428,633
+Gangs of New York,117,3550,1350
+金陵十三釵,17,5,6
+Surf's Up,119,2568,516
+The Stepford Wives,115,784,244
+Black Hawk Down,60,126,37
+The Campaign,32,237,36

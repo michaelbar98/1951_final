@@ -1,0 +1,101 @@
+Title,Count,Like,Retweet
+The Notebook,99,269,33
+27 Dresses,12,14,2
+Hannah Montana: The Movie,1,1,1
+Rugrats in Paris: The Movie,0,0,0
+Up in the Air,68,335,56
+About Schmidt,0,0,0
+Warm Bodies,11,25,12
+Looper,51,105,20
+Down to Earth,76,196,53
+Hope Springs,9,45,5
+Forgetting Sarah Marshall,5,6,0
+Four Brothers,14,14,5
+Baby Mama,75,662,50
+Bride Wars,2,3,0
+Without a Paddle,6,2,0
+13 Going on 30,35,68,6
+Midnight in Paris,21,90,12
+The Nut Job,1,0,0
+Blow,58,63,32
+Like Mike,44,47,16
+The Curse of the Were-Rabbit,1,0,0
+P.S. I Love You,120,124,30
+Racing Stripes,4,0,0
+Atonement,75,967,139
+Letters to Juliet,3,3,0
+The Three Stooges,33,527,135
+Corpse Bride,32,45,5
+Glory Road,26,42,15
+Sicario,65,580,151
+Southpaw,95,546,55
+Drag Me to Hell,7,48,3
+The Age of Adaline,4,11,2
+Secondhand Lions,2,6,0
+Step Up 3D,1,0,0
+Blue Crush,17,48,21
+Stranger Than Fiction,42,86,30
+30 Days of Night,8,6,1
+The Cabin in the Woods,7,89,23
+Meet the Spartans,2,35,2
+Hanna,83,1220,171
+Larry Crowne,3,5,0
+Carrie,95,250,33
+Take the Lead,120,479,116
+Gridiron Gang,9,93,12
+What's the Worst That Could Happen?,9,7,2
+9,85,31099,11736
+Side Effects,100,324,158
+The Prince & Me,0,0,0
+Winnie the Pooh,118,758,278
+Dumb and Dumberer: When Harry Met Lloyd,0,0,0
+Get on Up,7,9,0
+My Super Ex-Girlfriend,0,0,0
+Deliver Us from Evil,14,20,13
+Sanctum,18,74,15
+Little Black Book,22,30,7
+The Five-Year Engagement,3,1,0
+Mr. 3000,4,175,27
+The Next Three Days,10,72,12
+Ultraviolet,75,312,58
+Assault on Precinct 13,5,11,3
+Eight Legged Freaks,5,7,0
+Love & Other Drugs,0,0,0
+88 Minutes,0,0,0
+North Country,38,79,52
+The Whole Ten Yards,0,0,0
+Splice,48,52,8
+Pride and Glory,4,0,0
+The Cave,41,112,33
+Alex & Emma,0,0,0
+Wicker Park,99,164,32
+Fright Night,58,171,40
+The New World,10,9,2
+Dragonball Evolution,9,21,4
+The Last Stand,9,7,2
+Godsend,36,137,19
+Chasing Liberty,13,8,1
+Hoodwinked Too! Hood VS. Evil,0,0,0
+An Unfinished Life,5,17,3
+The Imaginarium of Doctor Parnassus,2,11,3
+Barney's Version,0,0,0
+Runner Runner,3,2,0
+Antitrust,120,349,203
+Dead Man Down,0,0,0
+The Merchant of Venice,10,22,6
+The Good Thief,0,0,0
+Supercross,110,474,62
+Miss Potter,1,3,0
+Wu Ji,3,9,2
+DOA: Dead or Alive,0,0,0
+The Assassination of Jesse James by the Coward Robert Ford,0,0,0
+辛亥革命,3,10,4
+Le petit Nicolas,22,90,34
+Wild Card,120,767,159
+Machine Gun Preacher,3,0,0
+Konferenz der Tiere,0,0,0
+Goodbye Bafana,0,0,0
+United Passions,0,0,0
+Grace of Monaco,5,0,4
+Савва. Сердце воина,0,0,0
+Ripley's Game,0,0,0

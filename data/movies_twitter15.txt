@@ -1,0 +1,101 @@
+Title,Count,Like,Retweet
+一個人的武林,0,0,0
+Red Sky,93,429,91
+On the Road,120,3323,353
+Rocky Balboa,55,222,51
+Jane Got a Gun,2,0,0
+Think Like a Man Too,0,0,0
+The Whole Nine Yards,4,7,0
+Old School,68,2111,339
+Return to Me,5,242,10
+Zack and Miri Make a Porno,1,0,0
+Nurse Betty,0,0,0
+The Men Who Stare at Goats,0,0,0
+Double Take,55,53,11
+Win a Date with Tad Hamilton!,0,0,0
+Ready to Rumble,38,94,15
+I Don't Know How She Does It,5,14,4
+Piranha 3D,2,2,0
+Beyond the Sea,9,27,6
+The Bridge of San Luis Rey,0,0,0
+Faster,99,655,174
+ハウルの動く城,57,606,84
+Zombieland,55,45,5
+Final Destination,73,191,71
+The Ides of March,8,5,2
+Pitch Black,55,194,79
+Someone Like You...,41,71,12
+Her,68,18657,5121
+Joy Ride,83,140,42
+The Adventurer: The Curse of the Midas Box,1,0,0
+The Crew,113,860,267
+Haywire,10,10,7
+The Longshots,1,2,0
+In the Valley of Elah,0,0,0
+Coco avant Chanel,1,0,0
+Forsaken,102,1062,241
+Chéri,5,0,0
+Vanity Fair,96,706,132
+十月圍城,0,0,0
+1408,109,854,99
+The Water Diviner,3,10,2
+The Rookie,114,11106,1857
+The Game Plan,5,3,0
+The Animal,70,4049,775
+The Hundred-Foot Journey,0,0,0
+I Am Sam,21,12,2
+Son of God,79,254,118
+Underworld,69,358,102
+Derailed,24,69,25
+The Informant!,8,19,2
+Deuce Bigalow: European Gigolo,1,0,0
+Delivery Man,9,28,17
+Our Kind of Traitor,0,0,0
+Saving Silverman,2,0,1
+Diary of a Wimpy Kid: Dog Days,0,0,0
+Jay and Silent Bob Strike Back,13,8,0
+The Glass House,10,15,4
+Hail, Caesar!,29,114,15
+Josie and the Pussycats,24,92,21
+Homefront,76,139,32
+The Little Vampire,1,4,2
+I Heart Huckabees,2,0,0
+Megiddo: The Omega Code 2,0,0,0
+The Transporter Refueled,0,0,0
+The Libertine,0,0,0
+Zwartboek,7,8,1
+Joyeux Noël,0,0,0
+Hit & Run,5,1,3
+Mad Money,62,96,19
+Before I Go to Sleep,0,0,0
+Stone,92,583,276
+Molière,88,177,61
+Out of the Furnace,1,0,0
+Michael Clayton,1,1,0
+Metegol,6,18,4
+To Rome with Love,9,4,0
+Death at a Funeral,7,21,2
+Hardball,120,6027,2101
+Silver Linings Playbook,22,45,9
+Freedom Writers,14,20,3
+For Colored Girls,21,56,31
+The Transporter,7,6,2
+Never Back Down,86,2884,388
+Away We Go,27,95,3
+Swing Vote,10,34,12
+Moonlight Mile,9,6,0
+Tinker Tailor Soldier Spy,9,70,18
+The Beaver,2,0,0
+Pulse,107,1620,232
+Bringing Down the House,7,4,1
+Jackass 3D,1,2,0
+Beverly Hills Chihuahua,1,0,0
+The Conjuring,97,1225,375
+Are We There Yet?,118,1750,81
+Tammy,32,137,86
+School of Rock,120,374,52
+White Chicks,91,1364,168
+The Descendants,2,1,0
+Holes,62,104,28
+The Last Song,18,319,87
+12 Years a Slave,27,1223,356

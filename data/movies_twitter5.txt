@@ -1,0 +1,101 @@
+Title,Count,Like,Retweet
+AVP: Alien vs. Predator,42,20,9
+Alvin and the Chipmunks: The Squeakquel,54,13,16
+We Were Soldiers,119,1474,514
+Olympus Has Fallen,118,1980,795
+Battle: Los Angeles,110,380,129
+Big Fish,88,475,85
+War Horse,111,783,199
+The Monuments Men,115,650,1992
+Wall Street: Money Never Sleeps,80,112,63
+Dracula Untold,119,18293,4544
+Stardust,93,473,112
+The Dilemma,117,1095,410
+Bad Company,83,131,37
+Doom,97,1835,320
+I Spy,100,462,97
+Underworld: Awakening,119,622,1186
+Rock of Ages,120,3403,331
+Hart's War,81,115,48
+Killer Elite,113,743,252
+Rollerball,47,228,75
+Ballistic: Ecks vs. Sever,40,45,30
+Osmosis Jones,96,29534,6645
+Legends of Oz: Dorothy's Return,93,27965,15105
+Blackhat,120,10655,2500
+Sky Captain and the World of Tomorrow,70,88,41
+Basic Instinct 2,98,202,49
+Escape Plan,88,3363,1287
+The Legend of Hercules,113,2348,1423
+The Sum of All Fears,110,647,299
+The Twilight Saga: Eclipse,85,78,72
+The Score,69,2031,320
+Despicable Me,62,117,17
+Ted 2,91,813,163
+Agora,112,1026,309
+Hall Pass,83,2843,340
+The Finest Hours,113,1931,536
+Body of Lies,118,576,193
+Dinner for Schmucks,103,338,118
+Abraham Lincoln: Vampire Hunter,114,509,120
+The Last Legion,95,480,146
+Need for Speed,93,959,149
+What Women Want,102,389,175
+Ice Age,87,5065,1318
+Dreamcatcher,86,14629,6225
+Lincoln,117,2394,798
+The Santa Clause 2,116,694,262
+Les Misérables,119,847,156
+Step Brothers,66,363,43
+Due Date,64,292,22
+Unbroken,102,1540,297
+Space Cowboys,75,1977,321
+The Kid,120,11703,1166
+World Trade Center,97,410,113
+Mona Lisa Smile,98,2384,1271
+The Dictator,119,771,276
+Annie,112,648,108
+Focus,119,13938,1389
+This Means War,58,407,48
+Blade: Trinity,118,971,311
+Resident Evil: Retribution,116,321,112
+Death Race,93,1617,537
+Proof of Life,120,3404,2100
+Zathura: A Space Adventure,35,36,7
+We Are Marshall,61,1059,168
+Lucky Numbers,117,731,126
+I, Frankenstein,103,374,125
+Oliver Twist,56,136,48
+Elektra,72,659,101
+Sin City: A Dame to Kill For,103,1328,334
+Everest,120,4482,1016
+Perfume: The Story of a Murderer,56,119,21
+Austin Powers in Goldmember,65,182,56
+Astro Boy,45,116,16
+天將雄師,38,109,250
+Little Man,110,783,44
+U-571,99,342,119
+The Love Guru,116,376,128
+3000 Miles to Graceland,100,154,66
+The Hateful Eight,96,1855,461
+Blades of Glory,101,4758,852
+Hop,115,1248,292
+300,103,24368,8369
+Meet the Fockers,115,22914,4927
+Marley & Me,34,11,29
+Wild Hogs,119,6138,662
+Chicken Little,91,161,28
+Gone Girl,87,1438,340
+The Bourne Identity,120,2670,833
+Daddy Day Care,70,171,8
+2 Guns,111,424,97
+Cats & Dogs,1,0,0
+The Italian Job,33,101,25
+Two Weeks Notice,119,1037,385
+Couples Retreat,28,27,5
+Cheaper by the Dozen 2,116,1133,298
+Maze Runner: The Scorch Trials,11,5,1
+Eat Pray Love,120,1143,113
+The Family Man,117,4835,537
+RED,74,5393,1174
+Collateral,91,268,63

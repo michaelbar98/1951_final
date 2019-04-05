@@ -1,0 +1,101 @@
+Title,Count,Like,Retweet
+Micmacs à tire-larigot,0,0,0
+8 Mile,71,111,22
+Pourquoi j'ai pas mangé mon père,0,0,0
+A Knight's Tale,35,344,104
+The Medallion,0,0,0
+Man on a Ledge,4,15,2
+The Big Year,0,0,0
+American Hustle,20,77,11
+The Proposal,35,58,14
+Lucy,102,1782,579
+Fifty Shades of Grey,86,1770,345
+Spy Kids 3-D: Game Over,0,0,0
+Cheaper by the Dozen,10,23,0
+Lone Survivor,32,170,71
+The Conjuring 2,18,22,1
+The Social Network,80,67,22
+He's Just Not That Into You,18,147,19
+Scary Movie 4,2,7,0
+Scream 3,14,8,3
+Get Hard,9,16,2
+Julie & Julia,0,0,0
+42,113,7461,1821
+Dumb and Dumber To,0,0,0
+Eight Below,1,0,0
+The Intern,24,24,3
+Ride Along 2,3,0,0
+Ray,93,1593,597
+Sin City,89,606,96
+Vantage Point,38,687,241
+I Love You, Man,14,15,2
+Shallow Hal,4,1,0
+Big Momma's House 2,1,0,0
+The Mexican,5,0,0
+17 Again,14,21,5
+The Other Woman,22,13,0
+The Final Destination,1,1,0
+Bridge of Spies,10,6,1
+Behind Enemy Lines,32,76,11
+Get Him to the Greek,9,3,0
+Shall We Dance?,16,42,6
+The Count of Monte Cristo,3,1,0
+The Lincoln Lawyer,3,2,0
+Unknown,65,279,121
+The Prestige,28,165,20
+Horrible Bosses 2,5,0,0
+Escape from Planet Earth,0,0,0
+Apocalypto,23,86,18
+Predators,110,918,180
+Secret Window,18,48,12
+The Lake House,6,9,3
+The Skeleton Key,1,16,0
+The Odd Life of Timothy Green,2,8,0
+Made of Honor,4,45,5
+Jersey Boys,70,368,43
+Gothika,12,19,0
+Aliens vs Predator: Requiem,2,14,3
+Autumn in New York,10,8,0
+Music and Lyrics,28,1643,122
+Paul,73,2114,202
+The Guilt Trip,1,3,0
+Scream 4,5,3,0
+Sex Tape,20,66,14
+Hanging Up,0,0,0
+Final Destination 5,5,1,0
+Pay It Forward,119,2541,1193
+Fever Pitch,37,111,19
+Drillbit Taylor,0,0,0
+A Million Ways to Die in the West,7,2,0
+Extremely Loud & Incredibly Close,0,0,0
+Morning Glory,92,734,160
+Get Rich or Die Tryin',32,45,10
+The Art of War,47,57,26
+Rent,91,1052,353
+Bless the Child,0,0,0
+The Musketeer,0,0,0
+The Other Boleyn Girl,7,5,0
+Sweet November,9,164,18
+The Reaping,12,35,11
+Colombiana,57,382,30
+City By The Sea,20,33,7
+Torque,96,345,57
+Marie Antoinette,98,289,59
+Get Carter,15,20,4
+Lo imposible,8,3,1
+Fantastic Mr. Fox,17,29,4
+Life or Something Like It,3,0,0
+Le fabuleux destin d'Amélie Poulain,0,0,0
+New York Minute,12,66,27
+Alfie,70,341,38
+Big Miracle,0,0,0
+FearDotCom,0,0,0
+Cirque du Freak: The Vampire's Assistant,0,0,0
+Duplex,66,75,18
+Soul Men,1,6,2
+Pandorum,3,2,0
+Impostor,45,40,31
+Extreme Ops,0,0,0
+Just Visiting,15,24,4
+Sunshine,81,7300,1357
+A Thousand Words,3,1,0

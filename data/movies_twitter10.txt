@@ -1,0 +1,101 @@
+Title,Count,Like,Retweet
+Delgo,5,18,19
+The Gunman,2,0,0
+Stormbreaker,49,33,5
+Disturbia,49,262,19
+The Hunting Party,17,75,14
+投名狀,0,0,0
+Nomad,91,2607,450
+Snowpiercer,39,58,10
+Un monstre à Paris,2,0,0
+The Last Shot,0,0,0
+Baahubali: The Beginning,0,0,0
+The Time Traveler's Wife,4,3,0
+Because I Said So,16,16,2
+Frankenweenie,23,35,8
+Serenity,99,2009,488
+Against the Ropes,1,0,0
+Grudge Match,12,43,13
+Chi bi,101,3860,1448
+Sweet Home Alabama,115,517,97
+The Ugly Truth,72,232,21
+Spy Kids 2: The Island of Lost Dreams,0,0,0
+一代宗師,0,0,0
+Water for Elephants,9,54,20
+Dragon Nest: Warriors' Dawn,0,0,0
+Enough,108,13181,5188
+Heartbreakers,33,35,6
+Paul Blart: Mall Cop 2,2,0,0
+Angel Eyes,77,102,30
+Joe Somebody,0,0,0
+Rock Star,108,4967,816
+Precious,103,1245,235
+Riddick,15,12,1
+Texas Rangers,120,498,137
+City of Ember,2,19,4
+The Master,63,229,40
+Virgin Territory,2,15,2
+The Express,13,78,6
+The 5th Wave,16,88,19
+Creed,43,92,59
+The Town,86,133,25
+What to Expect When You're Expecting,4,6,2
+Burn After Reading,3,2,2
+Nim's Island,0,0,0
+Rush,110,2459,554
+Cop Out,37,29,8
+How to Be Single,15,13,0
+Dolphin Tale,11,12,1
+Twilight,104,10115,2215
+John Q,4,1,0
+We're the Millers,12,31,1
+Obitaemyy Ostrov,0,0,0
+Hot Tub Time Machine,22,45,3
+Dolphin Tale 2,2,0,0
+Reindeer Games,2,1,0
+A Man Apart,2,0,0
+Aloha,98,1041,171
+The Rite,1,0,0
+Isn't She Great,0,0,0
+Space Chimps,0,0,0
+Head of State,12,38,7
+The Hangover,54,225,24
+葉問3,2,0,0
+There Be Dragons,7,29,3
+The Blind Side,20,34,5
+Spy Kids,52,256,37
+Horrible Bosses,17,10,2
+True Grit,59,277,36
+The Devil Wears Prada,47,141,14
+Identity Thief,2,0,0
+21,106,366,125
+Trainwreck,100,215,35
+Guess Who,113,1169,163
+Sky High,89,146,31
+The Cell,20,18,3
+Secretariat,91,320,70
+TMNT,109,11873,2918
+Radio,99,541,181
+Friends with Benefits,47,406,127
+Neighbors 2: Sorority Rising,2,0,0
+Saving Mr. Banks,17,9,1
+This Is 40,120,234,17
+Old Dogs,38,105,8
+Underworld: Rise of the Lycans,0,0,0
+License to Wed,0,0,0
+The Benchwarmers,1,0,0
+Must Love Dogs,118,294,28
+Resident Evil,92,10475,1869
+The Ladykillers,10,23,6
+Max Payne,52,305,60
+In Time,57,150,49
+The Back-Up Plan,0,0,0
+Something Borrowed,13,22,4
+Black Knight,88,781,209
+The Pianist,21,50,4
+The Nativity Story,0,0,0
+House of Wax,119,996,91
+Closer,86,233,38
+J. Edgar,0,0,0
+Mirrors,111,326,71
+Queen of the Damned,6,3,2

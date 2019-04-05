@@ -1,0 +1,101 @@
+Title,Count,Like,Retweet
+Into the Blue,74,16437,2349
+Your Highness,114,1145,452
+Dream House,113,109,18
+Fair Game,116,6513,1672
+Domino,80,796,227
+Gamer,104,4047,2039
+Beautiful Creatures,30,23,6
+Death to Smoochy,5,3,0
+Zoolander 2,88,1772,803
+The Big Bounce,1,0,0
+What Planet Are You From?,2,2,0
+Drive Angry,2,0,0
+Street Fighter: The Legend of Chun-Li,0,0,0
+The One,110,2243,357
+The Boat That Rocked,81,1055,449
+Traffic,115,2956,677
+Anna Karenina,84,517,71
+Chappie,72,642,87
+Panic Room,17,65,11
+The Tooth Fairy,1,3,3
+Child 44,1,16,3
+Rat Race,67,95,25
+K-PAX,4,6,5
+Kate & Leopold,0,0,0
+Bedazzled,104,1635,264
+3:10 to Yuma,2,0,1
+Taken 3,58,343,45
+Riding in Cars with Boys,40,34643,4617
+Happily N'Ever After,5,25,13
+America's Sweethearts,1,2,0
+Insomnia,106,2341,581
+Jonah Hex,29,77,19
+The Infiltrator,1,0,0
+Taken 2,43,526,70
+Scary Movie 3,10,6,0
+Miss Congeniality,82,8922,2635
+Journey to the Center of the Earth,61,1349,378
+The Princess Diaries 2: Royal Engagement,1,0,0
+The Bucket List,11,6,2
+Monster-in-Law,28,1780,346
+Prisoners,79,295,210
+Training Day,120,2102,338
+Scary Movie 2,15,11,1
+The Muppets,62,524,89
+Coach Carter,22,28,2
+Changing Lanes,4,0,0
+Coyote Ugly,35,40,9
+Love Actually,76,243,59
+From Hell,25,135,48
+Kicking & Screaming,0,0,0
+The Hitchhiker's Guide to the Galaxy,41,1774,634
+Fat Albert,7,2503,378
+Resident Evil: Extinction,3,2,0
+Blended,112,330,85
+Last Holiday,7,4,3
+Savages,111,569,89
+Cellular,83,169,84
+Johnny English,70,3961,1690
+The Ant Bully,0,0,0
+Across the Universe,22,60,21
+Revolutionary Road,7,4,0
+16 Blocks,1,0,0
+Babylon A.D.,21,35,14
+Aliens in the Attic,20,55,24
+The Pledge,118,817,236
+The Producers,30,187,22
+All the Pretty Horses,6,5,2
+The Ghost Writer,21,34,7
+Miracle at St. Anna,21,148,77
+滿城盡帶黃金甲,0,0,0
+Bangkok Dangerous,2,1,0
+Big Trouble,16,14,0
+Love in the Time of Cholera,6,4,1
+Johnny English Reborn,2,0,0
+Foodfight!,59,79,15
+Argo,91,548,221
+The Bounty Hunter,2,0,0
+Underworld: Evolution,0,0,0
+Victor Frankenstein,6,3,2
+Finding Forrester,0,0,0
+28 Days,25,117,15
+Unleashed,119,1816,259
+The Sweetest Thing,34,40,5
+Charlie St. Cloud,2,1,0
+The Mechanic,14,19,2
+21 Jump Street,36,972,226
+Chicken Run,45,2069,417
+Along Came Polly,0,0,0
+The Heat,29,51,17
+Here Comes the Boom,33,157,21
+High Crimes,47,49,32
+The Mothman Prophecies,0,0,0
+Brüno,0,0,0
+Red Riding Hood,52,81,23
+15 Minutes,40,42,8
+Lord of War,12,10,1
+英雄,43,399,166
+One for the Money,4,384,12
+The Interview,44,739,231
+The Warrior's Way,3,0,1

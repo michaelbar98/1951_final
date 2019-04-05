@@ -1,0 +1,101 @@
+Title,Count,Like,Retweet
+Freddy vs. Jason,63,153,10
+The Face of an Angel,0,0,0
+Jimmy Neutron: Boy Genius,0,0,0
+Cloverfield,28,41,14
+No Country for Old Men,31,57,15
+Ride Along,100,4628,445
+Bridget Jones's Diary,0,0,0
+Chocolat,106,758,188
+Legally Blonde 2: Red, White & Blonde,0,0,0
+Parental Guidance,30,25,10
+No Strings Attached,44,108,19
+Romeo Must Die,8,12,8
+Final Destination 3,0,0,0
+The Lucky One,11,68,12
+Bridge to Terabithia,10,21,1
+Finding Neverland,119,177,34
+A Madea Christmas,1,0,0
+The Grey,6,13,0
+Hide and Seek,112,5080,531
+Anchorman: The Legend of Ron Burgundy,2,0,0
+Agent Cody Banks,0,0,0
+Nanny McPhee,6,6,1
+Contraband,42,48,25
+There Will Be Blood,36,482,65
+The Wild Thornberrys Movie,0,0,0
+Rugrats Go Wild,11,25,9
+Undercover Brother,4,12,2
+The Sisterhood of the Traveling Pants,8,23,8
+Kiss of the Dragon,1,0,0
+The House Bunny,6,5,1
+Beauty Shop,37,30,7
+Million Dollar Arm,2,59,5
+The Giver,76,82,14
+What a Girl Wants,17,1308,101
+Jeepers Creepers 2,1,0,0
+Good Luck Chuck,7,17,1
+Cradle 2 the Grave,1,0,0
+The Hours,11,4,0
+She's the Man,30,64,11
+Mr. Bean's Holiday,5,0,0
+Anacondas: The Hunt for the Blood Orchid,1,0,1
+Blood Ties,17,45,4
+August Rush,12,116,13
+The Sitter,1,0,0
+Dance Flick,1,0,0
+Crocodile Dundee in Los Angeles,0,0,0
+The Gambler,32,160,34
+August: Osage County,6,47,16
+Ice Princess,5,12,0
+A Lot Like Love,4,2,0
+Eddie the Eagle,32,298,49
+Dear John,63,1069,275
+The Losers,14,30,4
+Don't Be Afraid of the Dark,6,2,2
+War,109,3646,983
+Punch-Drunk Love,7,5,4
+EuroTrip,101,181,16
+Half Past Dead,1,0,0
+Unaccompanied Minors,8,20,12
+The Greatest Game Ever Played,3,19,8
+The Box,82,73,30
+The Ruins,9,3,0
+The Next Best Thing,3,3,1
+My Soul to Take,1,1,0
+The Girl Next Door,29,233,291
+Stealing Harvard,0,0,0
+Legend,110,63920,7623
+Hot Rod,114,1363,316
+Shark Night,0,0,0
+Draft Day,68,141,20
+The Conspirator,2,0,0
+Lords of Dogtown,6,23,3
+The 33,6,101,11
+Un Plan parfait,0,0,0
+Warrior,117,6595,1261
+Stop-Loss,60,232,49
+Abandon,58,59,10
+The Possession,2,7,1
+Straw Dogs,7,14,3
+The Hoax,3,3,1
+The Road,46,182,33
+Underclassman,2,9,0
+Say It Isn't So,20,106,21
+The World's Fastest Indian,0,0,0
+King's Ransom,5,2,0
+Blindness,105,397,153
+BloodRayne,13,21,5
+Carnage,116,1080,284
+Where the Truth Lies,1,0,0
+Cirque du Soleil: Worlds Away,0,0,0
+Me and Orson Welles,2,0,0
+La migliore offerta,3,0,0
+The Bad Lieutenant: Port of Call - New Orleans,0,0,0
+Sammy's avonturen: De geheime doorgang,0,0,0
+Les petits mouchoirs,18,52,16
+Love Ranch,1,2,0
+La véritable histoire du Chat Botté,0,0,0
+Белка и Стрелка. Звёздные собаки,0,0,0
+The Counselor,7,34,9
+Ironclad,35,332,60
