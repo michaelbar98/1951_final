@@ -14,6 +14,7 @@ class Stats():
         self.c = conn.cursor()
         self.score_movies()
 
+
     def close_connection(self):
         self.c.close()
         self.conn.close()
@@ -56,7 +57,6 @@ class Stats():
             iter+=1
             self.c.execute('''UPDATE movie_actor SET actor_score = ? WHERE actorID = ?''',insert)
         self.conn.commit()
-
 
 
     def score_movies(self):
