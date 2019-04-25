@@ -60,24 +60,38 @@ class Stats():
 
 
     def score_movies(self):
-        movies = self.c.execute('''select distinct id from movies WHERE revenue>0''')
+        movies = self.c.execute('''select distinct id, revenue from movies WHERE revenue>0''')
 
         movIds = list(movies)
 
-        for id in movIds:
+        for k in movIds:
 
             sql = "select DISTINCT actorID, actor_score FROM movie_actor WHERE movieId=?"
-            output = self.c.execute(sql, id)
+            output = self.c.execute(sql, [k[0]])
 
             listOutput = list(output)
             print(listOutput)
 
-            newList = [x[1] for x in listOutput if not (x[1] == 0.0)]
-            npArray = np.array(newList)
+            newList = []
 
+            for x in listOutput:
+                sql1 = "select count(movieID) from movie_actor WHERE actorID = ?"
+                out = self.c.execute(sql1, [x[0]])
+
+                countMovies = list(out)[0]
+
+                if countMovies[0] > 1:
+
+                    totalActorScore = float(countMovies[0]) * float(x[1])
+                    adjustedActorScore = float((totalActorScore-k[1])/(countMovies[0]-1))
+                    newList.append(adjustedActorScore)
+                else:
+                    newList.append(0.0)
+
+            npArray = np.array(newList)
             avg = np.mean(npArray)
 
-            self.c.execute('''UPDATE movies SET cast_score = ? WHERE id = ?''', [avg, id[0]])
+            self.c.execute('''UPDATE movies SET cast_score = ? WHERE id = ?''', [avg, k[0]])
         self.conn.commit()
 
 
