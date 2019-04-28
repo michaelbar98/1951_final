@@ -8,6 +8,8 @@ from tensorflow.keras import layers, optimizers
 from sklearn.model_selection import train_test_split
 import sqlite3
 import os
+import matplotlib.colors as colors
+colors_list = list(colors._colors_full_map.values())
 
 def build_model(ndim):
     '''
@@ -38,6 +40,17 @@ def read_data(fname, query):
         y.append(item[1])
     return np.array(x), np.array(y)
 
+def read_genre(fname, query):
+    conn = sqlite3.connect(fname)
+    c = conn.cursor()
+    c.execute(query)
+    data = c.fetchall()
+    x, y = [], []
+    for item in data:
+        x.append([float(e) for e  in item[:-1]])
+        y.append(int(item[-1]))
+    return np.array(x), np.array(y)
+
 def normalize(x):
     nc = len(x[0])
     newx = np.zeros_like(x)
@@ -53,7 +66,7 @@ def normalize(x):
 def rescale(x, mean, std):
     return np.multiply(x, std) + mean
 
-def main():
+def regression():
     fname = 'data/movies_clean.db'
     script = "test.sql"
     with open(script, 'r') as infile:
@@ -101,11 +114,35 @@ def main():
                 facecolors='none', edgecolors='b', label = 'test data')
         plt.scatter(x_test[:, i], ypred,\
                 facecolors='none', edgecolors='k', label='prediction by NN on test data')
-        plt.ylabel('normalized evenue')
+        plt.ylabel('normalized revenue')
         plt.xlabel('normalized factor #' + str(i))
         plt.savefig(str(i) + 'factor.png')
         plt.legend()
     plt.show()
+
+def genre_viz():
+    fname = 'data/movies_clean.db'
+    script = "genre.sql"
+    with open(script, 'r') as infile:
+        query = infile.readlines()
+    query = ''.join([x for x in query])
+    x, y = read_genre(fname, query)
+    x = normalize(x)
+    x = np.sin(x)
+    genreid = set(y)
+    colorid = list(range(len(genreid)))
+    print("Current number of genres =", len(colorid))
+    colordict = dict(zip(genreid, colorid))
+    for i in range(len(x)):
+        row = x[i]
+        plt.scatter(row[0], row[1], color=colors_list[colordict[y[i]]])
+    plt.ylabel('normalized revenue')
+    plt.xlabel('normalized budget')
+    plt.show()
+
+def main():
+    #regression()
+    genre_viz()
 
 if __name__ == "__main__":
     main()
