@@ -230,7 +230,29 @@ class Parser():
     def clean_youtube_csv(self, path = "youtube_scrapper.csv"):
         self.drop_table("youtube_clean")
         self.c.execute('''CREATE TABLE "youtube_clean" ( "name" TEXT, "views" INTEGER, "likes" INTEGER, "dislikes" INTEGER )''')
-        def get_right_trailer(list):
+        def get_right_trailer(list, row):
+            #print(list)
+            assert len(list) %3 == 0
+
+
+            total_v = 0
+            total_l = 0
+            total_d = 0
+            i = 0
+            out  = [total_v, total_l, total_d]
+            for i  in  range(len(list)):
+                rating = list[i]
+                assert rating != " " and rating != ' '
+
+                if rating == "-1" or rating == "":
+                    rating = 0
+                index = i%3
+                out[index] += int(rating)
+            return out
+
+
+            '''
+
 
             i = 0
             max_views = -2
@@ -248,7 +270,7 @@ class Parser():
                     max_views = views
             if to_return is None:
                 return [list[0], -10,-10]
-            return to_return
+            return to_return'''
 
 
 
@@ -260,14 +282,14 @@ class Parser():
                 if first:
                     first = False
                     continue
+
                 name_index = len(row) - 9
+
                 name = ",".join(row[0:name_index])
                 info = row[-9:]
-                if (len(info) == 4):
-                    trailer = info[1:]
-                else:
-                    trailer = get_right_trailer(info)
+                trailer = get_right_trailer(info, row)
                 to_be_inserted.append([name]+trailer)
+                print(to_be_inserted[-1])
 
             self.c.executemany('''insert into youtube_clean(name, views, likes, dislikes) values (?,?,?,?)''', to_be_inserted)
             self.conn.commit()
@@ -332,5 +354,5 @@ if __name__ == "__main__":
     #parser.close_connection()
     #parser.get_list_of_movies()
     #parser.add_normalised_money()
-    #parser.clean_youtube_csv()
-    parser.insert_twitter_table()
+    parser.clean_youtube_csv()
+    #parser.insert_twitter_table()
