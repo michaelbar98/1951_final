@@ -47,7 +47,8 @@ for i in range(3, len(features)+1):
         #print(curr_features_sql)
 
         all_input = "select " + curr_features_sql + ", m.revenue_now from movies as m, youtube_clean as yc, movies_twitter as mt where m.original_title = yc.name and mt.title = yc.name and m.budget != 0 and yc.dislikes != 0 and m.cast_score is not null"
-        #print(all_input)
+        print(all_input)
+
         out = c.execute(all_input)
 
         x = []
