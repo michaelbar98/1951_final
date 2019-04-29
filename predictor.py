@@ -9,7 +9,14 @@ from sklearn.model_selection import train_test_split
 import sqlite3
 import os
 import matplotlib.colors as colors
+import matplotlib
 colors_list = list(colors._colors_full_map.values())
+EPOCH = 2000
+BATCH_SIZE = 500
+font={'family':'normal',
+      'size'  :18}
+matplotlib.rc('font', **font)
+genre_id = dict()
 
 def build_model(ndim):
     '''
@@ -29,19 +36,19 @@ def build_model(ndim):
                 metrics=['mean_absolute_error', 'mean_squared_error'])
     return model
 
-def read_data(fname, query):
-    conn = sqlite3.connect(fname)
+def query_float(dbfile, query):
+    conn = sqlite3.connect(dbfile)
     c = conn.cursor()
     c.execute(query)
     data = c.fetchall()
     x, y = [], []
     for item in data:
-        x.append([float(e) for e  in item[2:]])
-        y.append(item[1])
+        x.append([float(f) for f in item[:-1]])
+        y.append(float(item[-1]))
     return np.array(x), np.array(y)
 
-def read_genre(fname, query):
-    conn = sqlite3.connect(fname)
+def query_genre(dbfile, query):
+    conn = sqlite3.connect(dbfile)
     c = conn.cursor()
     c.execute(query)
     data = c.fetchall()
@@ -50,6 +57,14 @@ def read_genre(fname, query):
         x.append([float(e) for e  in item[:-1]])
         y.append(int(item[-1]))
     return np.array(x), np.array(y)
+
+def fill_genre_id():
+    with open("./data/id_genre.txt", 'r') as infile:
+        data = infile.readlines()
+    for row in data:
+        row = row.strip()
+        arr = row.split(',')
+        genre_id[int(arr[0])] = arr[1]
 
 def normalize(x):
     nc = len(x[0])
@@ -66,13 +81,18 @@ def normalize(x):
 def rescale(x, mean, std):
     return np.multiply(x, std) + mean
 
-def regression():
-    fname = 'data/movies_clean.db'
-    script = "test.sql"
+def query_movies_clean():
+    dbfile = 'data/movies_clean.db'
+    script = "whole.sql"
     with open(script, 'r') as infile:
         query = infile.readlines()
     query = ''.join([x for x in query])
-    x, y = read_data(fname, query)
+    x, y = query_float(dbfile, query)
+    return x, y
+
+def regression(x, y):
+    if len(x) < 300:
+        return 0
     meanx, stdx = np.mean(x, axis = 0), np.std(x, axis = 0)
     meany, stdy = np.mean(y), np.std(y)
     # normalize data for more accuarate training 
@@ -83,66 +103,93 @@ def regression():
     x_train, x_test, y_train, y_test = train_test_split(newx, newy)
 
     model = build_model(len(x_train[0]))
-    epochs = 1000
-    b_size = 2000
+    epochs = EPOCH
+    b_size = BATCH_SIZE
     #his = model.fit(x_train, y_train, epochs = epochs, verbose = 2,\
     #        validation_split = 0.2)
-    his = model.fit(x_train, y_train, epochs = epochs, batch_size = b_size, verbose = 2,\
+    his = model.fit(x_train, y_train, epochs = epochs, batch_size = b_size, verbose = 0,\
             validation_split = 0.2)
-    ypred = model.predict(x_test)
+    return model, x_test, y_test, his
 
-    #xpred = rescale(x_test, meanx, stdx)
-    #ypred = rescale(ypred, meany, stdy)
-    
+def check_overfit(his):
     fig1 = plt.figure()
     plt.plot(his.history["loss"])
     plt.plot(his.history["val_loss"])
     plt.xlabel('epoch')
     plt.ylabel('loss')
     plt.legend(['train', 'validation'])
-
-    y_test = np.reshape(y_test, [1, -1])
-    fig2 = plt.figure()
-    plt.hist(y_test - ypred, label='error distribution')
-    plt.ylabel('counts')
-    plt.xlabel('y_test - NN_test')
-    plt.savefig('error_dis.png')
-
-    for i in range(len(x[0])):
-        fig = plt.figure()
-        plt.scatter(x_test[:, i], y_test,\
-                facecolors='none', edgecolors='b', label = 'test data')
-        plt.scatter(x_test[:, i], ypred,\
-                facecolors='none', edgecolors='k', label='prediction by NN on test data')
-        plt.ylabel('normalized revenue')
-        plt.xlabel('normalized factor #' + str(i))
-        plt.savefig(str(i) + 'factor.png')
-        plt.legend()
     plt.show()
 
+def plot_err_hist(y_ture, y_pred):
+    fig = plt.figure()
+    plt.hist(y_true - y_pred, label='error distribution')
+    plt.ylabel('counts')
+    plt.xlabel('True-Predict')
+    plt.show()
+
+def predict(model, x_test, y_test, topic):
+    node = 100
+    x_cont = np.linspace(min(x_test), max(x_test), node)
+    ypred = model.predict(x_cont)
+    
+    y_test = np.reshape(y_test, [1, -1])
+    for i in range(len(x_test[0])):
+        fig = plt.figure()
+        plt.gcf().subplots_adjust(bottom=0.2)
+        plt.scatter(x_test[:, i], y_test,\
+                facecolors='none', edgecolors='b', label = 'test data')
+        plt.plot(x_cont, ypred, 'k--', label='NN regression')
+        plt.ylabel('normalized revenue')
+        plt.xlabel('normalized budget')
+        plt.title(topic)
+        plt.savefig('./nn_regression/'+topic+'.png')
+        plt.legend()
+
 def genre_viz():
-    fname = 'data/movies_clean.db'
+    dbfile = 'data/movies_clean.db'
     script = "genre.sql"
     with open(script, 'r') as infile:
         query = infile.readlines()
     query = ''.join([x for x in query])
-    x, y = read_genre(fname, query)
+    x, y = query_genre(dbfile, query)
     x = normalize(x)
-    x = np.sin(x)
     genreid = set(y)
-    colorid = list(range(len(genreid)))
-    print("Current number of genres =", len(colorid))
-    colordict = dict(zip(genreid, colorid))
-    for i in range(len(x)):
-        row = x[i]
-        plt.scatter(row[0], row[1], color=colors_list[colordict[y[i]]])
-    plt.ylabel('normalized revenue')
-    plt.xlabel('normalized budget')
+    group = dict()
+    for i in genreid:
+        group[i] = []
+    for i, j in zip(x, y):
+        group[j].append(i)
+    for i in genreid:
+        group[i] = np.array(group[i])
+    return group
+
+def run():
+    x, y = query_movies_clean()
+    model, x_test, y_test, his = regression(x, y)
+    predict(model, x_test, y_test, "whole")
+    '''
+    data = genre_viz()
+    count = 0
+    for key in data.keys():
+        count += 1
+        print(count, "th genre")
+        print("Feeding genre:", genre_id[key])
+        x = data[key][:, 0]
+        x = np.reshape(x, [-1, 1])
+        y = data[key][:, 1]
+        try:
+            model, x_test, y_test, his = regression(x, y)
+        except:
+            model = None
+        if model:
+            predict(model, x_test, y_test, genre_id[key])
+    '''
     plt.show()
 
 def main():
-    #regression()
-    genre_viz()
+    #genre_viz()
+    fill_genre_id()
+    run()
 
 if __name__ == "__main__":
     main()
