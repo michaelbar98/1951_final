@@ -25,9 +25,9 @@ global number_features
 
 min_max_scaler = preprocessing.MinMaxScaler()
 # text_features = ['original_title'] #include other text features like genre 
-number_features = ['cast_score','budget_now', 'revenue_now','popularity'] #include twitter data and youtube data
-all_selected_features = ['original_title','cast_score','budget_now','revenue_now','popularity']
-eliminate_if_empty_list = ['revenue_now', 'popularity']
+number_features = ['cast_score','budget_now', 'revenue_now','views', '(yc.views * (yc.likes / yc.dislikes))', 'yc.likes / yc.dislikes','likes','dislikes','count','like','retweet'] #include twitter data and youtube data
+all_selected_features = ['original_title','cast_score','budget_now', 'revenue_now','views', '(yc.views * (yc.likes / yc.dislikes))', 'yc.likes / yc.dislikes','likes','dislikes','count','like','retweet']
+eliminate_if_empty_list = ['revenue_now', 'views']
 
 def data_clean(path):
     read_data = pd.read_csv(path)
@@ -166,7 +166,7 @@ def show_features(database):
     print("\n","--------------------------------------------------------------------------------------------------------")
     
 def preprocessing_numerical(data):
-    data_list_numerical = list(zip(data['cast_score'], data['budget_now'], data['popularity']))
+    data_list_numerical = list(zip(data['cast_score'],data['budget_now'],data['views'],data['(yc.views * (yc.likes / yc.dislikes))'],data['yc.likes / yc.dislikes'],data['likes'],data['dislikes'],data['count'],data['like'],data['retweet']))
     data_numerical = np.array(data_list_numerical)
     data_numerical = preprocessing_numerical_minmax(data_numerical)
     return data_numerical
@@ -184,7 +184,7 @@ def regr_without_cross_validation_train_test_perform_plot(model, data, target, m
     print_original_vs_predicted(test_target, predicted_gross, 0, 0, 10, model_name, "random", pred_type)
     bar_plot_original_vs_predicted_rand(test_target, predicted_gross, 20, model_name, pred_type)
 
-path = "moviesclean.csv"
+path = "moviescleaned.csv"
 data =data_clean(path)
 target_gross = data['revenue_now']
 database = data.drop('revenue_now', 1)
