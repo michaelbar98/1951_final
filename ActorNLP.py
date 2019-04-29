@@ -5,6 +5,8 @@ from collections import Counter
 import numpy as np
 from sklearn.decomposition import TruncatedSVD
 # sklearn modules for classification
+from sklearn.metrics import mean_squared_error, r2_score
+
 from sklearn.svm import SVC
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.neighbors import KNeighborsClassifier
@@ -41,6 +43,21 @@ class ActorNLP():
 
     def classify_documents(self, topics, labels):
 
+        def train_score(model,x_train, y_train, x_test, y_test, predictions):
+
+            model.fit(x_train, y_train)
+            predictions = model.predict(x_test)
+            errors = abs(predictions - y_test)
+            mean_error = np.mean(errors)
+            error_var = errors - mean_error
+            error_var = error_var ** 2
+            error_deviation = np.sqrt(np.mean(error_var))
+            print('Mean Absolute Error:', round((np.mean(errors)) / 1000000, 2), 'Millions.')
+            print('R squared:', r2_score(y_test, predictions))
+            print('mse:', round(mean_squared_error(y_test, predictions) / 1000000, 2), 'Millions.')
+            print('error std deviation:', round(error_deviation / 1000000, 2), 'Millions.')
+
+            print("")
         def classify(classifier):
             """
             Trains a classifier and tests its performance.
