@@ -21,11 +21,11 @@ from mpl_toolkits.mplot3d import Axes3D
 
 class ActorNLP():
 
-    def __init__(self, sqlfile = "data/movies_clean.db"):
+    def __init__(self, count_labels, sqlfile = "data/movies_clean.db"):
         conn = self.create_connection(sqlfile)
         self.conn = conn
         self.c = conn.cursor()
-        documents, document_word_counts, word_ids, labels = self.read_data()
+        documents, document_word_counts, word_ids, labels = self.read_data(count_labels)
         topics = self.lsa(documents, document_word_counts, word_ids)
         knn_score, decision_tree_score, svm_score, mlp_score = self.classify_documents(topics, labels)
         print('\n===== CLASSIFIER PERFORMANCE =====')
@@ -36,8 +36,8 @@ class ActorNLP():
         print('\n')
 
         # Cluster the data
-        clusters, centers = self.cluster_documents(topics)
-        self.plot_clusters(topics, clusters, centers)
+        #clusters, centers = self.cluster_documents(topics, num_clusters=count_labels)
+        #self.plot_clusters(topics, clusters, centers)
 
 
 
@@ -121,7 +121,7 @@ class ActorNLP():
 
         return knn_score, decision_tree_score, svm_score, mlp_score
 
-    def cluster_documents(self, topics, num_clusters=4):
+    def cluster_documents(self, topics, num_clusters):
         """
         Clusters documents based on their topics.
 
@@ -178,7 +178,7 @@ class ActorNLP():
 
 
         # Rows represent documents and columns represent topics
-        document_topic_matrix = TruncatedSVD(200, random_state=0).fit_transform(tf_idf)
+        document_topic_matrix = TruncatedSVD(500, random_state=0).fit_transform(tf_idf)
 
         topicDict = {}
         for i in range(0, len(document_topic_matrix)):
@@ -200,7 +200,7 @@ class ActorNLP():
             pass
         return
 
-    def read_data(self):
+    def read_data(self, count_labels):
 
         documents = {}  # Mapping from document IDs to a bag of words
         document_word_counts = Counter()  # Mapping from words to number of documents it appears in
@@ -219,7 +219,7 @@ class ActorNLP():
             output = self.c.execute(sql, [k[0]])
             actors = list(output)
 
-            labels[docid] = math.floor(float(k[1]/2787965087)*10)
+            labels[docid] = math.floor(float(k[1]/2787965087)*count_labels)
 
             bag = {}
 
@@ -248,7 +248,15 @@ class ActorNLP():
 
 
 def main():
-    a = ActorNLP()
+
+
+    count_labels = 5
+
+    while count_labels < 50:
+        x = float(2787965087/count_labels)
+        print("Labels Count: " + str(count_labels) + " nearest " + str(x))
+        a = ActorNLP(count_labels)
+        count_labels += 5
 
 if __name__ == '__main__':
     main()
