@@ -7,7 +7,7 @@ movie_company (IGNORE)
 movie_country (IGNORE)
 movie_genre links each movie with respective genres
 movie_keyword (IGNORE)
-movies has many meta informations about a movie
+movies has many meta information about a movie
 movies_twitter links movie to twitter information
 youtube_clean links movie to youtube information
 youtube (IGNORE)
