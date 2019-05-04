@@ -27,13 +27,14 @@ class ActorNLP():
         self.c = conn.cursor()
         documents, document_word_counts, word_ids, labels = self.read_data(count_labels)
         topics = self.lsa(documents, document_word_counts, word_ids)
-        knn_score, decision_tree_score, svm_score, mlp_score = self.classify_documents(topics, labels)
-        print('\n===== CLASSIFIER PERFORMANCE =====')
+        #knn_score, decision_tree_score, svm_score, mlp_score = \
+        self.classify_documents(topics, labels)
+        '''print('\n===== CLASSIFIER PERFORMANCE =====')
         print('K-Nearest Neighbors Accuracy: %.3f' % knn_score)
         print('Decision Tree Accuracy: %.3f' % decision_tree_score)
         print('SVM Accuracy: %.3f' % svm_score)
         print('Multi-Layer Perceptron Accuracy: %.3f' % mlp_score)
-        print('\n')
+        print('\n')'''
 
         # Cluster the data
         #clusters, centers = self.cluster_documents(topics, num_clusters=count_labels)
@@ -43,8 +44,10 @@ class ActorNLP():
 
     def classify_documents(self, topics, labels):
 
-        def train_score(model,x_train, y_train, x_test, y_test, predictions):
-
+        def train_score(model,x_train, y_train, x_test, y_test):
+            assert len(x_train) == len(y_train)
+            print(x_train)
+            print(sorted(y_train))
             model.fit(x_train, y_train)
             predictions = model.predict(x_test)
             errors = abs(predictions - y_test)
@@ -56,8 +59,8 @@ class ActorNLP():
             print('R squared:', r2_score(y_test, predictions))
             print('mse:', round(mean_squared_error(y_test, predictions) / 1000000, 2), 'Millions.')
             print('error std deviation:', round(error_deviation / 1000000, 2), 'Millions.')
-
             print("")
+
         def classify(classifier):
             """
             Trains a classifier and tests its performance.
@@ -105,7 +108,7 @@ class ActorNLP():
 
         # TODO: create a KNeighborsClassifier that uses 3 neighbors to classify
         knn = KNeighborsClassifier(n_neighbors=3)
-        knn_score = classify(knn)
+        knn_score = train_score(knn, X_train, y_train, X_test, y_test)
 
         # TODO: create a DecisionTreeClassifier with random_state=0
         decision_tree = DecisionTreeClassifier(random_state=0)
@@ -113,11 +116,11 @@ class ActorNLP():
 
         # TODO: create an SVC with random_state=0
         svm = SVC(gamma='auto', random_state=0)
-        svm_score = classify(svm)
+        svm_score = train_score(svm, X_train, y_train, X_test, y_test)
 
         # TODO: create an MLPClassifier with random_state=0
         mlp = MLPClassifier(random_state=0)
-        mlp_score = classify(mlp)
+        mlp_score = train_score(mlp, X_train, y_train, X_test, y_test)
 
         return knn_score, decision_tree_score, svm_score, mlp_score
 
@@ -218,8 +221,11 @@ class ActorNLP():
             sql = "select actorName from movie_actor where movieID = ?"
             output = self.c.execute(sql, [k[0]])
             actors = list(output)
-
+            each_block = 2787965087/count_labels
+            number_blocks = math.floor(k[1]/each_block)
             labels[docid] = math.floor(float(k[1]/2787965087)*count_labels)
+            assert number_blocks == labels[docid]
+            print(number_blocks)
 
             bag = {}
 
@@ -250,9 +256,9 @@ class ActorNLP():
 def main():
 
 
-    count_labels = 5
+    count_labels = 100
 
-    while count_labels < 50:
+    while count_labels == 100:
         x = float(2787965087/count_labels)
         print("Labels Count: " + str(count_labels) + " nearest " + str(x))
         a = ActorNLP(count_labels)
